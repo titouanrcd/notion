@@ -3,90 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notion Nav Bar - Centrée</title>
+    <title>Notion Nav Bar - Style Image</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Styles Généraux */
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #191919; /* Fond sombre type Notion */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #121212; /* Fond sombre pour faire ressortir le néon */
         }
 
-        /* Conteneur principal pour le centrage */
         .page-background {
             display: flex;
-            justify-content: center; /* Centre la nav horizontalement */
+            justify-content: center;
             width: 100%;
-            min-height: 100vh;
+            padding-top: 30px;
         }
 
-        /* Barre de navigation */
+        /* BARRE DE NAVIGATION STYLE "IMAGE" */
         .nav-bar {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             align-items: center;
-            background-color: #fcfcfc;
-            border-radius: 50px;
-            padding: 12px 30px;
+            background-color: #ffffff;
             
-            /* GESTION DES 75px DE MARGE DE CHAQUE CÔTÉ */
-            width: calc(100% - 150px); 
-            max-width: none; /* Permet de s'étendre sur les grands écrans */
+            /* Forme pilule parfaite */
+            border-radius: 100px; 
             
-            margin-top: 20px;
-            height: fit-content;
+            /* Taille demandée : 75px de marge de chaque côté */
+            width: calc(100% - 150px);
+            max-width: 950px; /* Limite pour ne pas qu'elle soit trop fine sur écrans géants */
+            
+            /* Hauteur ajustée pour correspondre à l'image */
+            height: 55px; 
+            padding: 0 20px;
             box-sizing: border-box;
 
-            /* Effets visuels */
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4), 
-                        0 0 30px rgba(0, 229, 255, 0.2), 
-                        0 0 45px rgba(0, 229, 255, 0.1);
-            border: 1px solid rgba(0, 229, 255, 0.2);
+            /* Effet néon Cyan intense */
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 
+                        0 0 20px rgba(0, 255, 255, 0.3),
+                        0 0 30px rgba(0, 255, 255, 0.1);
+            
+            border: 2px solid rgba(0, 255, 255, 0.3);
         }
 
-        /* Liens de navigation */
         .nav-link {
             text-decoration: none;
             color: #333;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700; /* Texte un peu plus gras comme sur l'image */
             display: flex;
             align-items: center;
             gap: 8px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            padding: 10px 18px;
-            border-radius: 30px;
-            white-space: nowrap; /* Évite que le texte passe à la ligne */
+            padding: 8px 15px;
+            border-radius: 15px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
         }
 
         .nav-link i {
-            font-size: 16px;
-            color: #666;
-            transition: color 0.3s ease;
+            font-size: 18px;
+            color: #444;
         }
 
-        /* États au survol */
+        /* Effet au survol (similaire au bouton CALENDRIER de l'image) */
         .nav-link:hover {
-            color: #00e5ff;
-            background-color: rgba(0, 229, 255, 0.08);
-            transform: translateY(-2px);
+            background-color: rgba(0, 229, 255, 0.15);
+            color: #000;
         }
 
-        .nav-link:hover i {
-            color: #00e5ff;
-        }
-
-        /* Responsive : Ajustement pour mobile si l'écran est trop petit */
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-bar {
-                width: calc(100% - 40px); /* Marges plus petites sur mobile */
+                width: calc(100% - 30px);
+                height: auto;
+                padding: 10px;
                 flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
+                border-radius: 20px;
             }
+            .nav-link { font-size: 11px; }
         }
     </style>
 </head>
@@ -95,19 +90,19 @@
     <div class="page-background">
 
         <nav class="nav-bar">
-            <a href="URL_PAGE_ACCUEIL" class="nav-link">
+            <a href="#" class="nav-link">
                 <i class="fas fa-home"></i> ACCUEIL
             </a>
-            <a href="URL_PAGE_NOTES" class="nav-link">
-                <i class="fas fa-sticky-note"></i> NOTES
+            <a href="#" class="nav-link">
+                <i class="fas fa-edit"></i> NOTES
             </a>
-            <a href="URL_PAGE_PROJETS" class="nav-link">
+            <a href="#" class="nav-link">
                 <i class="fas fa-folder"></i> PROJETS
             </a>
-            <a href="URL_PAGE_CALENDRIER" class="nav-link">
+            <a href="#" class="nav-link" style="background-color: rgba(0, 229, 255, 0.15);">
                 <i class="fas fa-calendar-alt"></i> CALENDRIER
             </a>
-            <a href="URL_PAGE_INFORMATIQUE" class="nav-link">
+            <a href="#" class="nav-link">
                 <i class="fas fa-desktop"></i> INFORMATIQUE
             </a>
         </nav>
